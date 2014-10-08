@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SVG Hangman</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="A hangman game that features SVG graphics.">
+  <meta name="author" content="Sam Whitley">
+
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+  <link rel="stylesheet" type="text/css" href="styles/jquery.jscrollpane.css">
+  <link rel="stylesheet" type="text/css" href="styles/jquery-ui.min.css">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <!--[if lt IE 9 ]>
+      <script type='text/javascript'>
+          alert( 'Sorry, this game will not work because your browser is out of date. Upgrade to a new version of Internet Explorer or try a different browser like Chrome or Firefox.' );
+      </script>
+  <![endif]-->
+</head>
+
+<body>
+<div class="wrapper clearfix">
+  <header class="clearfix">
+    <section id="logoSection">
+      <svg id="logoIconWrap" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 198 229">
+        <g id="logoIcon" fill="#FFF" transform="translate(-315.27792,-380.89767)">
+          <path transform="matrix(1.3660901,0,0,1.3660901,-20.907991,-327.32905)" d="m319 623-18-10.4 0-20.8 18-10.4 18 10.4 0 20.8zM412 469l0-70.3 2.69-17.9 2.69 17.9 0 70.3M412 469l0-70.3 2.69-17.9 2.69 17.9 0 70.3M412 469l0-70.3 2.69-17.9 2.69 17.9 0 70.3"/>
+          <path d="m412 469 0-70.3 2.69-17.9 2.69 17.9 0 70.3z"/>
+          <path d="m415 449-25.3-24.9-5.15-8.7 7.71 3.95 25.3 24.9z"/>
+          <path d="m415 449 25.3-24.9 5.15-8.7-7.71 3.95-25.3 24.9z"/>
+          <path d="m415 424-15.8-15.6-3.22-5.44 4.82 2.47 15.8 15.6z"/>
+          <path d="m415 424 15.8-15.6 3.22-5.44-4.82 2.47-15.8 15.6z"/>
+          <path d="m415 404-9.41-9.26-1.91-3.23 2.86 1.47 9.41 9.26z"/>
+          <path d="m415 404 9.41-9.26 1.91-3.23-2.86 1.47-9.41 9.26z"/>
+          <path d="m412 521 0 70.3 2.69 17.9 2.69-17.9 0-70.3z"/>
+          <path d="m415 542-25.3 24.9-5.15 8.7 7.71-3.95 25.3-24.9z"/>
+          <path d="m415 542 25.3 24.9 5.15 8.7-7.71-3.95-25.3-24.9z"/>
+          <path d="m415 567-15.8 15.6-3.22 5.44 4.82-2.47 15.8-15.6z"/>
+          <path d="m415 567 15.8 15.6 3.22 5.44-4.82-2.47-15.8-15.6z"/>
+          <path d="m415 586-9.41 9.26-1.91 3.23 2.86-1.47 9.41-9.26z"/>
+          <path d="m415 586 9.41 9.26 1.91 3.23-2.86-1.47-9.41-9.26z"/>
+          <path d="m436 511 60.9 35.2 16.8 6.6-14.1-11.3-60.9-35.2z"/>
+          <path d="m455 519 8.92 34.4 4.96 8.81 0.429-8.65-8.92-34.4z"/>
+          <path d="m455 519 34.2-9.47 10.1-0.115-7.28 4.7-34.2 9.47z"/>
+          <path d="m476 531 5.57 21.5 3.1 5.51 0.268-5.41-5.57-21.5z"/>
+          <path d="m476 531 21.4-5.92 6.32-0.0716-4.55 2.94-21.4 5.92z"/>
+          <path d="m493 541 3.31 12.8 1.84 3.27 0.159-3.21-3.31-12.8z"/>
+          <path d="m493 541 12.7-3.52 3.76-0.0426-2.7 1.75-12.7 3.52z"/>
+          <path d="m393 480-60.9-35.2-16.8-6.6 14.1 11.3 60.9 35.2z"/>
+          <path d="m374 473-8.92-34.4-4.96-8.81-0.429 8.65 8.92 34.4z"/>
+          <path d="m374 473-34.2 9.47-10.1 0.115 7.28-4.7 34.2-9.47z"/>
+          <path d="m352 460-5.57-21.5-3.1-5.51-0.268 5.41 5.57 21.5z"/>
+          <path d="m352 460-21.4 5.92-6.32 0.0716 4.55-2.94 21.4-5.92z"/>
+          <path d="m336 451-3.31-12.8-1.84-3.27-0.159 3.21 3.31 12.8z"/>
+          <path d="m336 451-12.7 3.52-3.76 0.0426 2.7-1.75 12.7-3.52z"/>
+          <path d="m435 480 60.9-35.2 16.8-6.6-14.1 11.3-60.9 35.2z"/>
+          <path d="m454 473 8.92-34.4 4.96-8.81 0.429 8.65-8.92 34.4z"/>
+          <path d="m454 473 34.2 9.47 10.1 0.115-7.28-4.7-34.2-9.47z"/>
+          <path d="m476 460 5.57-21.5 3.1-5.51 0.268 5.41-5.57 21.5z"/>
+          <path d="m476 460 21.4 5.92 6.32 0.0716-4.55-2.94-21.4-5.92z"/>
+          <path d="m493 450 3.31-12.8 1.84-3.27 0.159 3.21-3.31 12.8z"/>
+          <path d="m493 450 12.7 3.52 3.76 0.0426-2.7-1.75-12.7-3.52z"/>
+          <path d="m394 511-60.9 35.2-16.8 6.6 14.1-11.3 60.9-35.2z"/>
+          <path d="m375 519-8.92 34.4-4.96 8.81-0.429-8.65 8.92-34.4z"/>
+          <path d="m375 519-34.2-9.47-10.1-0.115 7.28 4.7 34.2 9.47z"/>
+          <path d="m353 532-5.57 21.5-3.1 5.51-0.268-5.41 5.57-21.5z"/>
+          <path d="m353 532-21.4-5.92-6.32-0.0716 4.55 2.94 21.4 5.92z"/>
+          <path d="m337 541-3.31 12.8-1.84 3.27-0.159-3.21 3.31-12.8z"/>
+          <path d="m337 541-12.7-3.52-3.76-0.0426 2.7 1.75 12.7 3.52z"/>
+        </g>
+      </svg>
+
+      <h1 id="logoText">SVG Hangman</h1>
+    </section>
+
+    <section id="menuSection">
+      <div class="menuItem">
+        <svg id="instructionsIconWrap" class="menuIconWrap" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 198 229">
+          <g id="instructionsIcon" class="menuSnowflake" fill="#FFF" transform="translate(-315.27792,-380.89767)">
+            <path transform="matrix(1.3660901,0,0,1.3660901,-20.907991,-327.32905)" d="m319 623-18-10.4 0-20.8 18-10.4 18 10.4 0 20.8zM412 469l0-70.3 2.69-17.9 2.69 17.9 0 70.3M412 469l0-70.3 2.69-17.9 2.69 17.9 0 70.3M412 469l0-70.3 2.69-17.9 2.69 17.9 0 70.3"/>
+            <path d="m412 469 0-70.3 2.69-17.9 2.69 17.9 0 70.3z"/>
+            <path d="m415 449-25.3-24.9-5.15-8.7 7.71 3.95 25.3 24.9z"/>
+            <path d="m415 449 25.3-24.9 5.15-8.7-7.71 3.95-25.3 24.9z"/>
+            <path d="m415 424-15.8-15.6-3.22-5.44 4.82 2.47 15.8 15.6z"/>
+            <path d="m415 424 15.8-15.6 3.22-5.44-4.82 2.47-15.8 15.6z"/>
+            <path d="m415 404-9.41-9.26-1.91-3.23 2.86 1.47 9.41 9.26z"/>
+            <path d="m415 404 9.41-9.26 1.91-3.23-2.86 1.47-9.41 9.26z"/>
+            <path d="m412 521 0 70.3 2.69 17.9 2.69-17.9 0-70.3z"/>
+            <path d="m415 542-25.3 24.9-5.15 8.7 7.71-3.95 25.3-24.9z"/>
+            <path d="m415 542 25.3 24.9 5.15 8.7-7.71-3.95-25.3-24.9z"/>
+            <path d="m415 567-15.8 15.6-3.22 5.44 4.82-2.47 15.8-15.6z"/>
+            <path d="m415 567 15.8 15.6 3.22 5.44-4.82-2.47-15.8-15.6z"/>
+            <path d="m415 586-9.41 9.26-1.91 3.23 2.86-1.47 9.41-9.26z"/>
+            <path d="m415 586 9.41 9.26 1.91 3.23-2.86-1.47-9.41-9.26z"/>
+            <path d="m436 511 60.9 35.2 16.8 6.6-14.1-11.3-60.9-35.2z"/>
+            <path d="m455 519 8.92 34.4 4.96 8.81 0.429-8.65-8.92-34.4z"/>
+            <path d="m455 519 34.2-9.47 10.1-0.115-7.28 4.7-34.2 9.47z"/>
+            <path d="m476 531 5.57 21.5 3.1 5.51 0.268-5.41-5.57-21.5z"/>
+            <path d="m476 531 21.4-5.92 6.32-0.0716-4.55 2.94-21.4 5.92z"/>
+            <path d="m493 541 3.31 12.8 1.84 3.27 0.159-3.21-3.31-12.8z"/>
+            <path d="m493 541 12.7-3.52 3.76-0.0426-2.7 1.75-12.7 3.52z"/>
+            <path d="m393 480-60.9-35.2-16.8-6.6 14.1 11.3 60.9 35.2z"/>
+            <path d="m374 473-8.92-34.4-4.96-8.81-0.429 8.65 8.92 34.4z"/>
+            <path d="m374 473-34.2 9.47-10.1 0.115 7.28-4.7 34.2-9.47z"/>
+            <path d="m352 460-5.57-21.5-3.1-5.51-0.268 5.41 5.57 21.5z"/>
+            <path d="m352 460-21.4 5.92-6.32 0.0716 4.55-2.94 21.4-5.92z"/>
+            <path d="m336 451-3.31-12.8-1.84-3.27-0.159 3.21 3.31 12.8z"/>
+            <path d="m336 451-12.7 3.52-3.76 0.0426 2.7-1.75 12.7-3.52z"/>
+            <path d="m435 480 60.9-35.2 16.8-6.6-14.1 11.3-60.9 35.2z"/>
+            <path d="m454 473 8.92-34.4 4.96-8.81 0.429 8.65-8.92 34.4z"/>
+            <path d="m454 473 34.2 9.47 10.1 0.115-7.28-4.7-34.2-9.47z"/>
+            <path d="m476 460 5.57-21.5 3.1-5.51 0.268 5.41-5.57 21.5z"/>
+            <path d="m476 460 21.4 5.92 6.32 0.0716-4.55-2.94-21.4-5.92z"/>
+            <path d="m493 450 3.31-12.8 1.84-3.27 0.159 3.21-3.31 12.8z"/>
+            <path d="m493 450 12.7 3.52 3.76 0.0426-2.7-1.75-12.7-3.52z"/>
+            <path d="m394 511-60.9 35.2-16.8 6.6 14.1-11.3 60.9-35.2z"/>
+            <path d="m375 519-8.92 34.4-4.96 8.81-0.429-8.65 8.92-34.4z"/>
+            <path d="m375 519-34.2-9.47-10.1-0.115 7.28 4.7 34.2 9.47z"/>
+            <path d="m353 532-5.57 21.5-3.1 5.51-0.268-5.41 5.57-21.5z"/>
+            <path d="m353 532-21.4-5.92-6.32-0.0716 4.55 2.94 21.4 5.92z"/>
+            <path d="m337 541-3.31 12.8-1.84 3.27-0.159-3.21 3.31-12.8z"/>
+            <path d="m337 541-12.7-3.52-3.76-0.0426 2.7 1.75 12.7 3.52z"/>
+          </g>
+        </svg>
+        <a href="#" id="instructionsLink">Instructions</a>
+      </div>
+
+      <div class="menuItem">
+        <svg class="menuIconWrap" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 198 229">
+          <g id="aboutIcon" class="menuSnowflake" fill="#FFF" transform="translate(-315.27792,-380.89767)">
+            <path transform="matrix(1.3660901,0,0,1.3660901,-20.907991,-327.32905)" d="m319 623-18-10.4 0-20.8 18-10.4 18 10.4 0 20.8zM412 469l0-70.3 2.69-17.9 2.69 17.9 0 70.3M412 469l0-70.3 2.69-17.9 2.69 17.9 0 70.3M412 469l0-70.3 2.69-17.9 2.69 17.9 0 70.3"/>
+            <path d="m412 469 0-70.3 2.69-17.9 2.69 17.9 0 70.3z"/>
+            <path d="m415 449-25.3-24.9-5.15-8.7 7.71 3.95 25.3 24.9z"/>
+            <path d="m415 449 25.3-24.9 5.15-8.7-7.71 3.95-25.3 24.9z"/>
+            <path d="m415 424-15.8-15.6-3.22-5.44 4.82 2.47 15.8 15.6z"/>
+            <path d="m415 424 15.8-15.6 3.22-5.44-4.82 2.47-15.8 15.6z"/>
+            <path d="m415 404-9.41-9.26-1.91-3.23 2.86 1.47 9.41 9.26z"/>
+            <path d="m415 404 9.41-9.26 1.91-3.23-2.86 1.47-9.41 9.26z"/>
+            <path d="m412 521 0 70.3 2.69 17.9 2.69-17.9 0-70.3z"/>
+            <path d="m415 542-25.3 24.9-5.15 8.7 7.71-3.95 25.3-24.9z"/>
+            <path d="m415 542 25.3 24.9 5.15 8.7-7.71-3.95-25.3-24.9z"/>
+            <path d="m415 567-15.8 15.6-3.22 5.44 4.82-2.47 15.8-15.6z"/>
+            <path d="m415 567 15.8 15.6 3.22 5.44-4.82-2.47-15.8-15.6z"/>
+            <path d="m415 586-9.41 9.26-1.91 3.23 2.86-1.47 9.41-9.26z"/>
+            <path d="m415 586 9.41 9.26 1.91 3.23-2.86-1.47-9.41-9.26z"/>
+            <path d="m436 511 60.9 35.2 16.8 6.6-14.1-11.3-60.9-35.2z"/>
+            <path d="m455 519 8.92 34.4 4.96 8.81 0.429-8.65-8.92-34.4z"/>
+            <path d="m455 519 34.2-9.47 10.1-0.115-7.28 4.7-34.2 9.47z"/>
+            <path d="m476 531 5.57 21.5 3.1 5.51 0.268-5.41-5.57-21.5z"/>
+            <path d="m476 531 21.4-5.92 6.32-0.0716-4.55 2.94-21.4 5.92z"/>
+            <path d="m493 541 3.31 12.8 1.84 3.27 0.159-3.21-3.31-12.8z"/>
+            <path d="m493 541 12.7-3.52 3.76-0.0426-2.7 1.75-12.7 3.52z"/>
+            <path d="m393 480-60.9-35.2-16.8-6.6 14.1 11.3 60.9 35.2z"/>
+            <path d="m374 473-8.92-34.4-4.96-8.81-0.429 8.65 8.92 34.4z"/>
+            <path d="m374 473-34.2 9.47-10.1 0.115 7.28-4.7 34.2-9.47z"/>
+            <path d="m352 460-5.57-21.5-3.1-5.51-0.268 5.41 5.57 21.5z"/>
+            <path d="m352 460-21.4 5.92-6.32 0.0716 4.55-2.94 21.4-5.92z"/>
+            <path d="m336 451-3.31-12.8-1.84-3.27-0.159 3.21 3.31 12.8z"/>
+            <path d="m336 451-12.7 3.52-3.76 0.0426 2.7-1.75 12.7-3.52z"/>
+            <path d="m435 480 60.9-35.2 16.8-6.6-14.1 11.3-60.9 35.2z"/>
+            <path d="m454 473 8.92-34.4 4.96-8.81 0.429 8.65-8.92 34.4z"/>
+            <path d="m454 473 34.2 9.47 10.1 0.115-7.28-4.7-34.2-9.47z"/>
+            <path d="m476 460 5.57-21.5 3.1-5.51 0.268 5.41-5.57 21.5z"/>
+            <path d="m476 460 21.4 5.92 6.32 0.0716-4.55-2.94-21.4-5.92z"/>
+            <path d="m493 450 3.31-12.8 1.84-3.27 0.159 3.21-3.31 12.8z"/>
+            <path d="m493 450 12.7 3.52 3.76 0.0426-2.7-1.75-12.7-3.52z"/>
+            <path d="m394 511-60.9 35.2-16.8 6.6 14.1-11.3 60.9-35.2z"/>
+            <path d="m375 519-8.92 34.4-4.96 8.81-0.429-8.65 8.92-34.4z"/>
+            <path d="m375 519-34.2-9.47-10.1-0.115 7.28 4.7 34.2 9.47z"/>
+            <path d="m353 532-5.57 21.5-3.1 5.51-0.268-5.41 5.57-21.5z"/>
+            <path d="m353 532-21.4-5.92-6.32-0.0716 4.55 2.94 21.4 5.92z"/>
+            <path d="m337 541-3.31 12.8-1.84 3.27-0.159-3.21 3.31-12.8z"/>
+            <path d="m337 541-12.7-3.52-3.76-0.0426 2.7 1.75 12.7 3.52z"/>
+          </g>
+        </svg>
+        <a href="#" id="aboutLink">About</a>
+      </div>
+    </section>
+  </header>
+
+  <div id="overlay"></div>
+
+  <div id="instructionsText" class="overlayText">
+    <h3>Rules of Hangman</h3>
+
+    <p class="indent1">
+      This game is a version of the widely popular Hangman. As in all other Hangman games, your goal is to guess the letters that make up a word. If you make five wrong guesses, you lose the game!
+    </p>
+
+    <h4>The Terminal</h4>
+
+    <p class="indent1">
+      The Terminal at the bottom displays information about the current game, such as the current word and available letters. You can guess letters by typing them into the Terminal with your keyboard (unfortunately, mobile browsers are not supported at this time). The Terminal should always respond to your input, but if it doesn't appear to be working, try clicking anywhere on the page before typing again.
+    </p>
+
+    <p class="indent1">
+      After only a short time, more text will have been printed to the terminal than can fit in the viewable area. However, you can scroll up through old messages with your mouse scroll wheel or by clicking and dragging the blue scroll bar.
+    </p>
+
+    <h4>The Game Area</h4>
+
+    <p class="indent1">
+      The Game Area is the Antarctic scene that takes up most of the screen. Just like the stick man and gallows pole of other Hangman games, it tells you how close you are to losing the game. Each wrong guess causes the iceberg to sink a little bit more. Penguins, being clumsy and defenseless creatures, prefer to stay on stable ground when the water is full of big dangerous things with sharp teeth.
+    </p>
+  </div>
+
+  <div id="aboutText" class="overlayText">
+    <p>
+      This game was "a just for fun" project that I made to get some practice with modern Web graphics and animation technologies. If you're interested in those things, keep reading!
+    </p>
+
+    <h3>Graphics</h3>
+
+    <p class="indent1">
+      All of the game's graphics are SVG shapes. <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" title="SVG">SVG (Scalable Vector Graphics)</a> is a standard for representing images that uses shapes, lines, and coordinates instead of pixels. This means that they can scale to any possible resolution - see this in action by resizing your browser window!
+    </p>
+
+    <h3>JavaScript</h3>
+
+    <p class="indent1">
+      All of the animations and logic for this game were written in JavaScript. Though most of this code is my own, I'm dependent on several libraries.
+    </p>
+
+    <ul class="indent3">
+      <li>
+        <a href="http://jquery.com/" title="jQuery"><strong>jQuery</strong></a> - So widespread that its use is almost a given at this point, but for good reason: it provides a simple interface for working with the DOM, which is otherwise subject to all kinds of cross-browser strangeness.
+      </li>
+      <li>
+        <a href="http://julian.com/research/velocity/" title="Velocity"><strong>Velocity</strong></a> - Velocity is a new JavaScript library that provides similar functionality to jQuery's <em>animate</em>, but with improved performance. It also supports animation on SVG attributes, which is why I used it here.
+      </li>
+      <li>
+        <a href="http://jscrollpane.kelvinluck.com/" title="jScrollPane"><strong>jScrollPane</strong></a> - Scrolling in the Terminal presented a unique challenge, but Kelvin Luck's jScrollPane gave me a simple API for solving these problems.
+      </li>
+    </ul>
+  </div>
+
+  <div id="gameScreen">
+    <div id="screenFlash"></div>
+    <div id="water"></div>
+    <svg id="svgWrap" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 643 1050">
+      <g transform="translate(-375.71424,78.801711)">
+        <g id="floatGroup">
+          <path id="iceberg" fill="#dcd6fc" d="m376 196 643 0-0.0002 71.4-59.4 34.3 0 60-57.8 33.4 0 41.6-58.7 33.9 0.0003 47.5-291 0 0-47.5-58.7-33.9 0-41.6-57.8-33.4 0-60-59.4-34.3zM657 141l-0.00025 11.9 10.2 0 9.9-9.9-4.88-8.45M657 141l-0.00025 11.9 10.2 0 9.9-9.9-4.88-8.45M657 141l-0.00025 11.9 10.2 0 9.9-9.9-4.88-8.45M657 141l-0.00025 11.9 10.2 0 9.9-9.9-4.88-8.45M657 141l-0.00025 11.9 10.2 0 9.9-9.9-4.88-8.45" />
+          <g id="penguinA">
+            <path fill="#000" d="m580 121-0.00031 15.4 13.1 0 12.8-12.8-6.29-10.9z" />
+            <path fill="#000" d="m578 124-24.3 6.51 24.3 0z" />
+            <path fill="#fb8b00" d="m578 135-24.3-3.34 24.3 0z" />
+            <path fill="#FF0" d="m595 137 11-10.8 0 10.8z" />
+            <path fill="#333" d="m593 138 12.3 0 9.8 17 0 50.1-22.1-24.9z" />
+            <path fill="#EEE" d="m591 138 0 42 12.9 14.9-19.1 0-12-23.4 6.49-33.6z" />
+            <path fill="#000" d="m594 196 7.67 0 0 13.3-21.1 0 13.5-7.51z" />
+            <path fill="#000" d="m627 195-10.8-10.8 0 10.8z" />
+          </g>
+          <g id="penguinB">
+            <path fill="#000" d="m657 141-0.00025 11.9 10.2 0 9.9-9.9-4.88-8.45z" />
+            <path fill="#000" d="m656 143-18.8 5.05 18.8 0z" />
+            <path fill="#fb8b00" d="m656 152-18.8-2.59 18.8 0z" />
+            <path fill="#FF0" d="m669 153 8.5-8.39 0 8.39z" />
+            <path fill="#333" d="m667 154 9.51 0 7.6 13.2 0 38.8-17.1-19.3z" />
+            <path fill="#EEE" d="m666 154 0 32.6 10 11.6-14.8 0-9.33-18.1 5.03-26.1z" />
+            <path fill="#000" d="m668 199 5.94 0 0 10.3-16.4 0 10.4-5.82z" />
+            <path fill="#000" d="m694 198-8.39-8.39 0 8.39z" />
+          </g>
+          <g id="penguinC">
+            <path fill="#000" d="m730 121-0.00031 15.4 13.1 0 12.8-12.8-6.29-10.9z" />
+            <path fill="#000" d="m728 124-24.3 6.51 24.3 0z" />
+            <path fill="#fb8b00" d="m728 135-24.3-3.34 24.3 0z" />
+            <path fill="#FF0" d="m745 137 11-10.8 0 10.8z" />
+            <path fill="#333" d="m743 138 12.3 0 9.8 17 0 50.1-22.1-24.9z" />
+            <path fill="#EEE" d="m741 138 0 42 12.9 14.9-19.1 0-12-23.4 6.49-33.6z" />
+            <path fill="#000" d="m744 196 7.67 0 0 13.3-21.1 0 13.5-7.51z" />
+            <path fill="#000" d="m777 195-10.8-10.8 0 10.8z" />
+          </g>
+          <g id="penguinD">
+            <path fill="#000" d="m807 141-0.00025 11.9 10.2 0 9.9-9.9-4.88-8.45z" />
+            <path fill="#000" d="m806 143-18.8 5.05 18.8 0z" />
+            <path fill="#fb8b00" d="m806 152-18.8-2.59 18.8 0z" />
+            <path fill="#FF0" d="m819 153 8.5-8.39 0 8.39z" />
+            <path fill="#333" d="m818 154 9.51 0 7.6 13.2 0 38.8-17.1-19.3z" />
+            <path fill="#EEE" d="m816 154 0 32.6 10 11.6-14.8 0-9.33-18.1 5.03-26.1z" />
+            <path fill="#000" d="m818 199 5.94 0 0 10.3-16.4 0 10.4-5.82z" />
+            <path fill="#000" d="m844 198-8.39-8.39 0 8.39z" />
+          </g>
+        </g>
+        <g id="orca">
+          <path fill="#000" d="m497 966 0-240 105-181 104-27.8 0 449z" />
+          <path fill="#EEE" d="m709 966 0-246 146-146 0 391z" />
+          <path fill="#EEE" d="m579 914 0-103 45.2-78.4 44.9-12 0 194z" />
+          <path fill="#EEE" d="m709 517 13 8.2-13 7.5z" />
+          <path fill="#EEE" d="m709 548 13 8.2-13 7.5z" />
+          <path fill="#EEE" d="m709 579 13 8.2-13 7.5z" />
+          <path fill="#EEE" d="m709 611 13 8.2-13 7.5z" />
+          <path fill="#EEE" d="m709 642 13 8.2-13 7.5z" />
+          <path fill="#EEE" d="m709 673 13 8.2-13 7.5z" />
+          <path fill="#EEE" d="m753 672-3.36-15 14.5 3.86z" />
+          <path fill="#EEE" d="m775 650-3.36-15 14.5 3.86z" />
+          <path fill="#EEE" d="m797 628-3.36-15 14.5 3.86z" />
+          <path fill="#EEE" d="m819 606-3.36-15 14.5 3.86z" />
+          <path fill="#EEE" d="m841 584-3.36-15 14.5 3.86z" />
+        </g>
+        <!-- 110 across, 200 up.  -->
+        <!-- (1) top left. (2) down 200, across 110 (3) back 110-->
+        <polygon id="leftFin" fill="#000" points="0 530, 110 730, 0 730" />
+        <!-- (1) lower left corner. (2) down 200, across 110 (3) back 110-->
+        <polygon id="rightFin" fill="#000" points="1270 730, 1380 530, 1380 730" /
+      </g>
+    </svg>
+  </div>
+
+
+  <div class="terminal">
+    <div class="terminalText"></div>
+  </div>
+</div>
+
+<script src="scripts/jquery-1.11.1.min.js"></script>
+<script src="scripts/jquery-ui.min.js"></script>
+<script src="scripts/velocity.min.js"></script>
+<script src="scripts/jquery.mousewheel.js"></script>
+<script src="scripts/jquery.jscrollpane.min.js"></script>
+<script src="scripts/puzzle.js"></script>
+<script src="scripts/terminal.js"></script>
+<script src="scripts/gameScreen.js"></script>
+<script src="scripts/controller.js"></script>
+<script src="scripts/menu.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

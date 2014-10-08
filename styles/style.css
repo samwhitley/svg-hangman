@@ -1,0 +1,231 @@
+/*** HELPER ***/
+
+  .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+
+  .clearfix {
+    display: inline-block; 
+  }
+
+  .hide {
+    display: none;
+  }
+
+/*** /HELPER ***/
+
+/*** GLOBAL ***/
+
+  html, body {
+    height: 100%;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+/*** /GLOBAL ***/
+
+/*** HEADER ***/
+  header {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    z-index: 920;
+  }
+
+  header section {
+    line-height: 75px;
+  }
+
+  header h1 {
+    margin: 0;
+    padding: 0;
+    float: left;
+  }
+
+  header a {
+    text-decoration: none;
+    color: #336699;
+  }
+
+  header a:hover {
+    text-decoration: underline;
+  }
+
+  header svg {
+    float: left;
+  }
+
+  #menuSection {
+    float: right;
+  }
+
+  .menuItem {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .menuItem:last-of-type {
+    margin-right: 0
+  }
+
+  #logoIconWrap {
+    width: 75px;
+    height: 75px;
+  }
+
+  .menuIconWrap {
+    width: 35px;
+    height: 35px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 700px) { 
+    #menuSection {
+      display: none;
+    }
+
+    #logoSection {
+      display: none;
+    }
+
+    #overlay {
+      display: none !important;
+    }
+
+    .overlayText {
+      display: none !important;
+    }
+  }
+
+/*** /HEADER ***/
+
+/*** GAME SCREEN ***/
+  #gameScreen {
+    height: 60%;
+    top: 0;
+    background: #aaccee;
+    position: relative;
+  }
+
+  #svgWrap {
+    width: 100%;
+    height: 100%;
+  }
+
+  #screenFlash {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  #water {
+    bottom: 30%;
+    position: fixed;
+    height: 39%;
+    width: 100%;
+    display: block;
+    background: #336699;
+  }
+
+/*** /GAME SCREEN ***/
+
+/*** OVERLAY ***/
+
+  #overlay {
+    background: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    z-index: 900;
+  }
+
+  .overlayText {
+    position: absolute;
+    color: #FFF;
+    display: none;
+    width: 80%;
+    height: 80%;
+    top: 150px;
+    left: 10%;
+    opacity: 0;
+    z-index: 910;
+    line-height: 20px;
+  }
+
+  .overlayText h1, .overlayText h2, .overlayText h3, .overlayText h4 {
+    color: #aaccee;
+  }
+
+  .overlayText a {
+    color: #aaccee;
+  }
+
+  .indent1 {
+    padding-left: 1em;
+  }
+
+  .indent3 {
+    padding-left: 3em;
+  }
+
+/*** /OVERLAY ***/
+
+/*** TERMINAL ***/
+
+  .terminal {
+    color: #FFF;
+    font-family: 'Ubuntu Mono';
+    width: 100%;
+    height: 30%;
+    padding: 20px;
+    background: black;
+    position: fixed;
+    bottom: 0;
+  }
+
+  .terminalText {
+    overflow: auto;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .currentAnswer {
+    letter-spacing: 0.35em;
+  }
+
+  .goodMessage {
+    color: #98fc66;
+  }
+
+  .badMessage {
+    color: red;
+  }
+
+  .infoMessage {
+    color: #aaccee;
+  }
+
+/*** /TERMINAL ***/
