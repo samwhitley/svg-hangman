@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "A hangman game that features SVG graphics and animations.",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/samwhitley/svg-hangman.git"
@@ -19,11 +16,8 @@
     "responsive"
   ],
   "author": "Sam Whitley",
-  "license": "BSD-2-Clause",
-  "bugs": {
-    "url": "https://github.com/samwhitley/svg-hangman/issues"
-  },
   "devDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": "~0.4.5",
+    "grunt-contrib-uglify": "^0.6.0"
   }
 }
