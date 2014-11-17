@@ -33,11 +33,24 @@ module.exports = function(grunt) {
           'scripts/scripts-min.js': allJSFiles
         }
       }
+    },
+    cssmin: {
+      combine: {
+        files: {
+          'styles/styles-min.css' : [
+            'styles/jquery-ui.min.css',
+            'styles/jquery.jscrollpane.css',
+            'styles/normalize.css',
+            'styles/style.css'
+          ]
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['uglify', 'cssmin']);
 };
