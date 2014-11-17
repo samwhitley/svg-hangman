@@ -93,11 +93,11 @@ var puzzle = (function(win, $) {
 
   puzzle.getCurrent = function () {
     return currentAnswer;
-  }
+  };
 
   puzzle.getRemainingWords = function () {
     return words.length;
-  }
+  };
 
   return puzzle;
 }(window, jQuery));

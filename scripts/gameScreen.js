@@ -22,7 +22,7 @@ var gameScreen = (function(doc) {
   };
 
   var _flashScreen = function(hexString, eventString) {
-    screenFlash.velocity({backgroundColor: hexString, opacity: .30}, {duration: 500})
+    screenFlash.velocity({backgroundColor: hexString, opacity: 0.30}, {duration: 500})
       .velocity({opacity: 0}, { duration: 500, complete: function() { $(doc).trigger(eventString); }});
   };
 
@@ -76,9 +76,9 @@ var gameScreen = (function(doc) {
     floatGroup.velocity(
       {
         translateY: "+=10"
-      }, 
+      },
       {
-        loop: true, 
+        loop: true,
         duration: 1000
       }
     );
@@ -113,7 +113,7 @@ var gameScreen = (function(doc) {
         translateY: translateYString
       },
       {
-        duration: 1000, 
+        duration: 1000,
         complete: function() {
           _startIcebergBob();
           _orcaFin();
@@ -167,9 +167,9 @@ var gameScreen = (function(doc) {
       orca.velocity(
         {
           translateY: "-=475"
-        }, 
+        },
         {
-          duration: 500, 
+          duration: 500,
           easing: 'linear',
           complete: function() {
             background.velocity({backgroundColor: "#980101"},{duration: 1500, queue: false});

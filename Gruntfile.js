@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-  var jsFiles = [
+  var allJSFiles = [
     'scripts/jquery-1.11.1.min.js',
     'scripts/jquery-ui.min.js',
     'scripts/velocity.min.js',
@@ -12,17 +12,25 @@ module.exports = function(grunt) {
     'scripts/controller.js',
     'scripts/menu.js',
     'scripts/main.js'
+  ],
+  myJSFiles = [
+    'scripts/puzzle.js',
+    'scripts/terminal.js',
+    'scripts/gameScreen.js',
+    'scripts/controller.js',
+    'scripts/menu.js',
+    'scripts/main.js'
   ];
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: jsFiles
+      files: myJSFiles
     },
     uglify: {
       js: {
         files: {
-          'scripts/scripts-min.js': jsFiles
+          'scripts/scripts-min.js': allJSFiles
         }
       }
     }

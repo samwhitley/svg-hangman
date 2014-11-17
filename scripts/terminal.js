@@ -17,7 +17,7 @@ var terminal = (function (win, doc, $) {
 
     e.preventDefault();
 
-    if (e.keyCode == 0) {
+    if (e.keyCode === 0) {
       code = e.which;
     } else {
       code = e.keyCode;
